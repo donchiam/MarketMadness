@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Valetbike</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript"> $(function ()
+          { $("#sign_up").modal({show:false });
+    </script>
+    <script type="text/javascript"> $(function ()
+          { $("#log_in").modal({show:false });
+    </script>
+
+  </head>
+
+  <body>
+    <div id="reg_modals">
+    <%= render template: "devise/sessions/new" %>
+    <%= render template: "users/registrations/new" %>
+    </div>
+  	<%= render partial: "layouts/navbar" %>
+  	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <div class="fluid-container" style="margin-top: 70px">
+      <div class="row">
+        <div id="rising" class="col-sm-3" class="picks">
+          <h3>Rising Tide</h3>
+          <ul>
+              <% @rising_stocks.each do |stock| %>
+                <li><%= link_to stock.symbol, stock_path(stock) %> - <%= link_to stock.name, stock_path(stock) %></li>
+              <% end %>
+            </ul>
+        </div>
+
+        <div id="icarus" class="col-sm-3" class="picks">
+          <h3>Icarus</h3>
+          <ul>
+              <% @icarus_stocks.each do |stock| %>
+                <li><%= link_to stock.symbol, stock_path(stock) %> - <%= link_to stock.name, stock_path(stock) %></li>
+              <% end %>
+            </ul>
+        </div>
+
+
+        <div id="bargain" class="col-sm-3" class="picks">
+          <h3>Bargain Bin</h3>
+          <ul>
+              <% @bargain_stocks.each do |stock| %>
+                <li><%= link_to stock.symbol, stock_path(stock) %> - <%= link_to stock.name, stock_path(stock) %></li>
+              <% end %>
+            </ul>
+        </div>
+
+        <div id="caution" class="col-sm-3" class="picks">
+          <h3>Look Out Below</h3>
+          <ul>
+              <% @caution_stocks.each do |stock| %>
+                <li><%= link_to stock.symbol, stock_path(stock) %> - <%= link_to stock.name, stock_path(stock) %></li>
+              <% end %>
+            </ul>
+        </div>
+
+        <div id="activity" class="col-sm-6 col-sm-offset-3">
+          hello
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

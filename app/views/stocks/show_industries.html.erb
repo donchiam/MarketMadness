@@ -1,0 +1,7 @@
+<h1><%= @industry.name -%></h1>
+
+<ul>
+   <% @industry.stocks.each do |stock| %>
+   <li><%= link_to stock.symbol, :action => "show", :id => stock.id -%></li>
+   <% end %>
+</ul>

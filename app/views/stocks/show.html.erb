@@ -1,0 +1,32 @@
+<p>
+  <strong>Symbol:</strong>
+  <%= @stock.symbol %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stock.name %>
+</p>
+
+<p>
+<strong>Industry: </strong>
+ <%= @stock.industry %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @stock.rank %>
+</p>
+
+<%= @data.date %>
+<p>
+  <strong>Last Closing Price:</strong>
+  <%= @data.close %>
+</p>
+High: <%= @data.high %>
+Low: <%= @data.low %>
+Volume: <%= @data.volume %>
+	<%= @data.column_names %>
+	
+
+<%= link_to 'Back', stocks_path %>
