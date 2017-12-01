@@ -1,10 +1,10 @@
 class Stock < ApplicationRecord
 	def self.icarus
-		where('rank > ? AND mom > ?', 90,90)
+		where('rank < ? AND mom > ?', 25,90)
 	end
 
 	def self.rising
-		where('rank > ? AND mom > ?', 90,50)
+		where('rank > ? AND mom > ?', 90,75)
 	end
 
 	def self.bargain
@@ -12,7 +12,7 @@ class Stock < ApplicationRecord
 	end
 
 	def self.caution
-		where('rank < ? AND mom < ?', 80,20)
+		where('rank < ? AND mom < ?', 25,10)
 	end
 	
 

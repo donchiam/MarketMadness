@@ -1,32 +1,83 @@
-<p>
-  <strong>Symbol:</strong>
-  <%= @stock.symbol %>
-</p>
+<div id="stock-show">
+  <div class="fluid-container">
+      <div class="row">
+        <div id="stock-details" class="col-xs-4">
+          <h3>Stock Details</h3>
+          <div id="stock-info">
+            <p>
+              <strong>Symbol: </strong>
+              <%= @stock.symbol %>
+            </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @stock.name %>
-</p>
+            <p>
+              <strong>Name: </strong>
+              <%= @stock.name %>
+            </p>
 
-<p>
-<strong>Industry: </strong>
- <%= @stock.industry %>
-</p>
+            <p>
+            <strong>Industry: </strong>
+             <%= @stock.industry %>
+            </p>
+            <p>
+            <strong>Value Score:</strong>
+              <%= @stock.rank %> 
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Close</th>
+                  <th>High</th>
+                  <th>Low</th>
+                  <th>Volume</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= @data.date %></td>
+                  <td><%= @data.close %></td>
+                  <td><%= @data.high %></td>
+                  <td><%= @data.low %></td>
+                  <td><%= @data.volume %></td>
+                </tr>
+              </tbody>
+            </table>
+            <%= @body %>
+          </div>
+        </div>
 
-<p>
-  <strong>Rank:</strong>
-  <%= @stock.rank %>
-</p>
+        
 
-<%= @data.date %>
-<p>
-  <strong>Last Closing Price:</strong>
-  <%= @data.close %>
-</p>
-High: <%= @data.high %>
-Low: <%= @data.low %>
-Volume: <%= @data.volume %>
-	<%= @data.column_names %>
-	
+        <div id="stock-rank" class="col-xs-4">
+          <h3>6 Month Price History</h3>
+          <div id="price-history">
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Closing Price</th>
+                  <th>Volume</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @price_history.each do |price| %>
+                  <tr>
+                    <td><%= price.date %></td>
+                    <td><%= price.close %></td>
+                    <td><%= price.volume %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-<%= link_to 'Back', stocks_path %>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <%= link_to 'Back', stocks_path %>
+</div>

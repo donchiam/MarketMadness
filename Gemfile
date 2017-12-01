@@ -60,3 +60,7 @@ gem "font-awesome-rails"
 gem 'carrierwave', '~> 1.0'
 gem 'quandl'
 gem 'filterrific'
+gem "chartkick"
+gem 'quandl_operation'
+gem 'googlecharts'
+gem 'rest-client'

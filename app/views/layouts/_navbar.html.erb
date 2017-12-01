@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
           </button>
           <%= link_to root_path, class: "navbar-brand" do %>
-            Stock
+            Market Madness
           <% end %>
         </div>
 
@@ -21,13 +21,7 @@
               <%= yield :right_nav %>
               <% case current_user.user_type %>
                 <% when 'client' %>
-              <li><button type="button"><%= link_to "Create a New Job", new_job_path, :class => "btn btn-success btn-xs" %></button></li>
-              <li><a href="/jobs">My Jobs</a></li>
-              <li><a href="/bikes">My Bikes</a></li>
-              <% end %>
-              <% case current_user.user_type %>
-                <% when 'valet' %>
-                <li><a href="/jobs">My Jobs</a></li>
+              <li><a href="/stocks">Stock Analysis</a></li>
               <% end %>
 
               <li class="dropdown">

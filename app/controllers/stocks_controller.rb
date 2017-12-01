@@ -1,9 +1,11 @@
+require 'rest-client'
 class StocksController < ApplicationController
   before_action :set_stock, only: [:show, :edit, :update, :destroy]
 
   # GET /stocks
   # GET /stocks.json
   def index
+    @stocks = Stock.all
     @icarus_stocks = Stock.icarus #Stock.all
     @rising_stocks = Stock.rising #Stock.all
     @bargain_stocks = Stock.bargain #Stock.all
@@ -15,7 +17,13 @@ class StocksController < ApplicationController
   def show
     @stock = Stock.find(params[:id])
     ticker = @stock.symbol
+    name = @stock.name
     @data = Quandl::Dataset.get('WIKI/' + ticker).data(params: { limit: 1 }).first
+    @price_history = Quandl::Dataset.get('WIKI/' + ticker).data(params: { limit: 180})
+    url = 'https://newsapi.org/v2/everything?q=' + name + '&from=2017-12-01&sortBy=popularity&apikey=d691cab4303d4289893580dedb78a770'
+    @body = RestClient.get(url)
+    JSON.parse(@body)
+
      # render json: data.column_names
 
 #      render json: data.data_fields

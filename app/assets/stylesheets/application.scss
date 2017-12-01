@@ -12,13 +12,14 @@
  *
  *= require font-awesome
  */
-@import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-sprockets";
 @import "stocks";
 
 html {
   height: 100%;
   overflow: hidden;
+
     
 }
 body {
@@ -26,17 +27,29 @@ body {
   min-height: 100%;
   height: 100%;
   overflow: auto;
+  background-image: url("/assets/stockmarket.jpg");
+}
+
+.navbar {
+  margin-top: 5px;
+  color: #F8F8FF;
+  background-color: rgba(239, 244, 252, 0);
+  border: 0;
+}
+
+.navbar .navbar-brand {
+  text-align: center;
+  font-size: 60px;
+  font-family: "Bangers", sans-serif;
+  color: #F8F8FF;
+  margin: 0 0 -1em 0;
+  text-shadow: -2px -2px black, 2px 2px black,  4px 4px black;
+
+}
+
+.navbar-default .navbar-nav > li > a{
+  font-size: 20px;
+  color: white;
 }
 
 
-#rising {
-  //float: right;
-  //position: fixed;
-  height: 50px;
-  //top: 10px; 
-  //left: 60px;
-  }
-
-.picks {
-  height: 200px;
-}

@@ -1,3 +1,75 @@
 // Place all the styles related to the Stocks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#stock-page, #stock-show  {
+	margin-left: 1%;	
+
+}
+
+
+
+.col-xs-3 {
+  width: 24%;
+  height: 540px;
+  border: 1px solid blue;
+  border-radius: 25px;
+  word-wrap: break-word;
+  margin: 4px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+#stock-list {
+	overflow: scroll;
+	margin: -15px;
+	margin-top: 55px;
+	height: 475px;
+
+}
+
+h3 {
+	position: fixed;
+	color: yellow;
+}
+
+#stock-list li a {
+	color: rgba(255,255,255,1);
+	text-shadow: 3px 2px black;
+	font-size: 16px;
+
+}
+
+#stock-list li a:hover {
+	color: yellow;
+	text-shadow: 2px 2px black;
+}
+
+.col-xs-4 {
+	height: 540px;
+	word-wrap: break-word;
+	margin: 2%;
+	border: 1px solid yellow;
+	border-radius: 25px;
+	margin-top: 25px;
+	color: white;
+	font-size: 20px;
+	background-color: rgba(0,0,0,0.5);
+
+}
+
+#price-history {
+	overflow: scroll;
+	margin: 0px;
+	margin-top: 55px;
+	height: 475px;
+}
+
+#stock-info {
+	overflow: scroll;
+	margin: 0px;
+	margin-top: 55px;
+	height: 475px;
+}
+	
