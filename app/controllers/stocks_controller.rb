@@ -21,8 +21,8 @@ class StocksController < ApplicationController
     @data = Quandl::Dataset.get('WIKI/' + ticker).data(params: { limit: 1 }).first
     @price_history = Quandl::Dataset.get('WIKI/' + ticker).data(params: { limit: 180})
     url = 'https://newsapi.org/v2/everything?q=' + name + '&from=2017-12-01&sortBy=popularity&apikey=d691cab4303d4289893580dedb78a770'
-    @body = RestClient.get(url)
-    JSON.parse(@body)
+    @body = JSON.parse(RestClient.get(url))
+
 
      # render json: data.column_names
 

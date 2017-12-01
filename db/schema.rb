@@ -12,41 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20171130015414) do
 
-  create_table "bikes", force: :cascade do |t|
-    t.string "make"
-    t.string "model"
-    t.string "color"
-    t.string "image"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_bikes_on_user_id"
-  end
-
-  create_table "jobs", force: :cascade do |t|
-    t.float "origin_lat"
-    t.float "origin_lng"
-    t.float "dest_lat"
-    t.float "dest_lng"
-    t.string "origin"
-    t.string "destination"
-    t.datetime "date"
-    t.datetime "time"
-    t.integer "bike_id"
-    t.integer "valet_id"
-    t.integer "status"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_jobs_on_user_id"
-  end
-
   create_table "stocks", force: :cascade do |t|
     t.string "symbol"
     t.string "name"
     t.string "industry"
     t.decimal "rank"
     t.decimal "mom"
+    t.decimal "pe"
+    t.decimal "pb"
+    t.decimal "div"
+    t.decimal "ps"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

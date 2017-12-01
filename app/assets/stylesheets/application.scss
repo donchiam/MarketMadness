@@ -15,6 +15,7 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
 @import "stocks";
+@import "home";
 
 html {
   height: 100%;
@@ -28,6 +29,9 @@ body {
   height: 100%;
   overflow: auto;
   background-image: url("/assets/stockmarket.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .navbar {
@@ -43,13 +47,14 @@ body {
   font-family: "Bangers", sans-serif;
   color: #F8F8FF;
   margin: 0 0 -1em 0;
-  text-shadow: -2px -2px black, 2px 2px black,  4px 4px black;
+  text-shadow: -2px -2px black, 2px 2px blue,  4px 4px black;
 
 }
 
 .navbar-default .navbar-nav > li > a{
   font-size: 20px;
   color: white;
+  text-shadow: 2px 2px black;
 }
 
 

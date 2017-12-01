@@ -16,6 +16,10 @@ csv.each do |row|
   t.industry = row['Industry']
   t.rank = row['Rank']
   t.mom = row['Mom']
+  t.pe = row['Pe']
+  t.pb = row['Pb']
+  t.div = row['Div']
+  t.ps = row['Ps']
   t.save
   puts "#{t.symbol}, #{t.name} saved"
 end
