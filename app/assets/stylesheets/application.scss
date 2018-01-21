@@ -16,6 +16,7 @@
 @import "bootstrap-sprockets";
 @import "stocks";
 @import "home";
+@import "users";
 
 html {
   height: 100%;
@@ -57,4 +58,14 @@ body {
   text-shadow: 2px 2px black;
 }
 
+#edit {
+  border: 1px solid yellow;
+  border-radius: 25px;
+  width: 40%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+  margin: auto;
+  margin-top: 5%;
+  color: white;
+}
 

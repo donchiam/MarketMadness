@@ -25,22 +25,11 @@
     <%= form.label :phone_number %></br>
     <%= form.number_field :phone_num, id: :user_phone_num %>
   </div>
-  
-  <!--<div class="field">
-    <%= form.label :user_type %>
-    <%= form.select :user_type, options_for_select([["Client", "client"], ["Valet", "valet"]]) %>
-  </div>
--->
   <br>
   <div class="actions">
     <%= form.submit %>
   </div>
   <br>
-  <% case current_user.user_type %>
-       <% when 'client' %>
-  <p><%= link_to "Skip for now", jobs_path %>  or <%= link_to "add a bike", new_bike_path %></p>
-  <% end %>
-</br>
   <p><%= link_to "Click here", edit_user_registration_path %> to change your log in settings or delete your account</p>
     
 <% end %>
